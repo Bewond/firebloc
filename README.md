@@ -129,3 +129,40 @@ BlocProvider<Firebloc>(
   ),
 )
 ```
+
+### FireblocUtilities
+
+**stateToWidget**: \
+`FireblocUtilities.stateToWidget`
+A function to simplify the writing of the code when you need to return a different Widget depending on the FireblocState.
+
+```dart
+BlocProvider<Firebloc>(
+  create: (context) => Firebloc<DiscoverLabel>(
+    repository: BaseRepository<DiscoverLabel>(
+      collectionName: 'mainLabels',
+      fromSnapshot: DiscoverLabel.fromSnapshot,
+    ),
+  ),
+  child: BlocBuilder<Firebloc, FireblocState>(
+    builder: (context, state) => FireblocUtilities.stateToWidget(
+      context,
+      state,
+      starting: (context) {
+        BlocProvider.of<Firebloc>(context).add(FetchData());
+        return Container();
+      },
+      success: (data) {
+        DiscoverLabel firstLabel = data[0];
+        print(firstLabel.text);
+        print(firstLabel.description);
+
+        return Text('Success');
+      },
+      loading: () => CircularProgressIndicator(),
+      error: () => Text('Error'),
+    ),
+  ),
+)
+```
+---
