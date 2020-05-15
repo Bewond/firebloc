@@ -7,12 +7,13 @@ A small library to simplify the use of bloc to manage the states of simple queri
 ### Example of BaseRepository
 This example shows how to use BaseRepository to retrieve data from a collection by creating only the data model.
 
-**Data model** (disocverLabel.dart):
+**Data model** (`disocverLabel.dart`):
 ```dart
 import 'package:meta/meta.dart';
 
 import 'package:firebloc/firebloc.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+
 
 class DiscoverLabel extends FireblocData {
   final String text;
@@ -76,6 +77,54 @@ BlocProvider<Firebloc>(
       //Error message.
       else
         return Text('Error');
+    },
+  ),
+)
+```
+
+### Example with a custom repository
+When the query to be executed is more complex, a customized repository and data model can be created. \
+The classes that represent repositories must extend from `FireblocRepository`
+and specify the custom type of data model you intend to use.
+
+The model is the same as in the previous example (`disocverLabel.dart`).
+
+**Data Repository** (`discoverRepository.dart`):
+
+```dart
+import 'package:firebloc/firebloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'package:bddelivery/models/discoverLabel.dart';
+
+
+class DiscoverRepository extends FireblocRepository {
+  final _collection = Firestore.instance.collection('mainLabels');
+
+  @override
+  Stream<List> getData() {
+    return _collection.snapshots().map((snapshot) {
+      return snapshot.documents
+          .map((doc) => DiscoverLabel.fromSnapshot(doc))
+          .toList();
+    });
+  }
+}
+```
+
+The use of the bloc is very similar to the previous example,
+just modify the repository definition to use the custom one.
+
+**Using the bloc**:
+
+```dart
+BlocProvider<Firebloc>(
+  create: (context) => Firebloc<DiscoverLabel>(
+    repository: DiscoverRepository(),
+  ),
+  child: BlocBuilder<Firebloc, FireblocState>(
+    builder: (context, state) {
+      //...
     },
   ),
 )
