@@ -165,4 +165,9 @@ BlocProvider<Firebloc>(
   ),
 )
 ```
+If necessary, you can specify a default Widget using the optional `defaultWidget` parameter.
+
 ---
+
+# Maintainers
+- [Riccardo Brero](https://github.com/Riki1312)
