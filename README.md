@@ -59,7 +59,7 @@ BlocProvider<Firebloc>(
   create: (context) => Firebloc<DiscoverLabel>(
     repository: BaseRepository<DiscoverLabel>(
       collectionName: 'mainLabels', //The collection from which to recover data.
-      fromSnapshot: DiscoverLabel.fromSnapshot,
+      fromSnapshot: DiscoverLabel.fromSnapshot, //Static method implemented in the model.
     ),
   ),
   child: BlocBuilder<Firebloc, FireblocState>(
