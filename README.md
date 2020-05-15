@@ -1,9 +1,16 @@
 # Firebloc
 A small library to simplify the use of bloc to manage the states of simple queries to Firebase.
 
+- [Firebloc](#firebloc)
+  * [Overview](#overview)
+    + [Example of BaseRepository](#example-of-baserepository)
+    + [Example with a custom repository](#example-with-a-custom-repository)
+    + [FireblocUtilities](#fireblocutilities)
+  * [Maintainers](#maintainers)
+
 ---
 
-# Overview
+## Overview
 ### Example of BaseRepository
 This example shows how to use BaseRepository to retrieve data from a collection by creating only the data model.
 
@@ -169,5 +176,5 @@ If necessary, you can specify a default Widget using the optional `defaultWidget
 
 ---
 
-# Maintainers
+## Maintainers
 - [Riccardo Brero](https://github.com/Riki1312)
