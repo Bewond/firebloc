@@ -1,0 +1,18 @@
+name: firebloc
+version: 0.1.6+1
+
+
+environment:
+  sdk: ">=2.6.0 <3.0.0"
+
+
+dependencies:
+  flutter:
+    sdk: flutter
+  #
+  firebase_core: ^0.4.4+3
+  cloud_firestore: ^0.13.5
+  equatable: ^1.1.1
+  rxdart: ^0.24.0
+  bloc: ^4.0.0
+  flutter_bloc: ^4.0.0
