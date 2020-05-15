@@ -1,6 +1,10 @@
 # Firebloc
 A small library for [Flutter](https://flutter.dev/) to simplify the use of [bloc](https://bloclibrary.dev/) to manage the states of simple queries to [Firebase](https://firebase.google.com/docs/firestore).
 
+
+(Currently in beta)
+
+
 - [Firebloc](#firebloc)
   * [Overview](#overview)
     + [Example of BaseRepository](#example-of-baserepository)
