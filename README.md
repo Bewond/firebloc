@@ -14,6 +14,22 @@ A small library for [Flutter](https://flutter.dev/) to simplify the use of [bloc
 
 ---
 
+## Installing
+### Depend
+Add this to your package's pubspec.yaml file:
+```yaml
+dependencies:
+  firebloc:
+    git:
+      url: git://github.com/bewond/firebloc.git
+      path: firebloc
+```
+### Install
+You can install packages from the command line:
+```shell
+flutter pub get
+```
+
 ## Overview
 ### Example of BaseRepository
 This example shows how to use BaseRepository to retrieve data from a collection by creating only the data model.
