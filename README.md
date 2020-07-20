@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://raw.githubusercontent.com/bewond/firebloc/master/docs/assets/firebloc.png" height="100" alt="Firebloc" />
+<img src="/docs/assets/firebloc.png" width="100%" alt="Firebloc" />
 </p>
 
 ## Overview
