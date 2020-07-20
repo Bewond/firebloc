@@ -1,4 +1,8 @@
-# Firebloc
+<p align="center">
+<img src="https://raw.githubusercontent.com/bewond/firebloc/master/docs/assets/firebloc.png" height="100" alt="Firebloc" />
+</p>
+
+## Overview
 A small library for [Flutter](https://flutter.dev/) to simplify the use of [bloc](https://bloclibrary.dev/) to manage the states of simple queries to [Firebase](https://firebase.google.com/docs/firestore).
 
 
@@ -12,10 +16,9 @@ A small library for [Flutter](https://flutter.dev/) to simplify the use of [bloc
     + [FireblocUtilities](#fireblocutilities)
   * [Maintainers](#maintainers)
 
----
 
 ## Installing
-### Depend
+#### Depend
 Add this to your package's pubspec.yaml file:
 ```yaml
 dependencies:
@@ -24,14 +27,14 @@ dependencies:
       url: git://github.com/bewond/firebloc.git
       path: firebloc
 ```
-### Install
+#### Install
 You can install packages from the command line:
 ```shell
 flutter pub get
 ```
 
-## Overview
-### Example of BaseRepository
+## Documentation
+#### Example of BaseRepository
 This example shows how to use BaseRepository to retrieve data from a collection by creating only the data model.
 
 **Data model** (`disocverLabel.dart`):
@@ -109,7 +112,7 @@ BlocProvider<Firebloc>(
 )
 ```
 
-### Example with a custom repository
+#### Example with a custom repository
 When the query to be executed is more complex, a customized repository and data model can be created. \
 The classes that represent repositories must extend from `FireblocRepository`
 and specify the custom type of data model you intend to use.
@@ -157,7 +160,7 @@ BlocProvider<Firebloc>(
 )
 ```
 
-### FireblocUtilities
+#### FireblocUtilities
 
 **stateToWidget**: \
 `FireblocUtilities.stateToWidget`
