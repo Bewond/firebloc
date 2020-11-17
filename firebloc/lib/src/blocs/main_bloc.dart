@@ -1,6 +1,5 @@
 import 'dart:async';
 
-import 'package:meta/meta.dart';
 import 'package:bloc/bloc.dart';
 
 import 'package:firebloc/src/blocs/main_event.dart';
@@ -14,21 +13,19 @@ import 'package:firebloc/src/repositories/main_repository.dart';
 * */
 
 class Firebloc<Type> extends Bloc<FireblocEvent, FireblocState> {
-  FireblocRepository _repository;
-  StreamSubscription _subscription;
+  FireblocRepository<Type> _repository;
+  StreamSubscription? _subscription;
 
-  Firebloc({@required repository})
+  Firebloc({required repository})
       : assert(repository != null),
-        _repository = repository;
-
-  @override
-  get initialState => Starting();
+        _repository = repository,
+        super(Starting());
 
   @override
   Stream<FireblocState> mapEventToState(FireblocEvent event) async* {
     if (event is FetchData) {
       yield* _mapFetchDataToState();
-    } else if (event is UpdateData) {
+    } else if (event is UpdateData<Type>) {
       yield* _mapUpdateDataToState(event);
     }
   }
@@ -40,7 +37,7 @@ class Firebloc<Type> extends Bloc<FireblocEvent, FireblocState> {
         .listen((result) => add(UpdateData<Type>(data: result)));
   }
 
-  Stream<FireblocState> _mapUpdateDataToState(UpdateData event) async* {
+  Stream<FireblocState> _mapUpdateDataToState(UpdateData<Type> event) async* {
     yield Success<Type>(data: event.data);
   }
 

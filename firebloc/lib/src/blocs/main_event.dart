@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 
 //
@@ -19,7 +18,7 @@ class UpdateData<Type> extends FireblocEvent {
   final List<Type> data;
 
   const UpdateData({
-    @required this.data,
+    required this.data,
   });
 
   @override

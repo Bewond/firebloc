@@ -1,4 +1,3 @@
-import 'package:meta/meta.dart';
 import 'package:equatable/equatable.dart';
 
 //
@@ -29,7 +28,7 @@ class Success<Type> extends FireblocState {
   final List<Type> data;
 
   const Success({
-    @required this.data,
+    required this.data,
   });
 
   @override

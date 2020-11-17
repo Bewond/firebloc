@@ -1,5 +1,3 @@
-import 'package:meta/meta.dart';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebloc/src/repositories/main_repository.dart';
 
@@ -16,17 +14,17 @@ class BaseRepository<Type> extends FireblocRepository<Type> {
   final Type Function(DocumentSnapshot snap) fromSnapshot;
 
   BaseRepository({
-    @required this.collectionName,
-    @required this.fromSnapshot,
+    required this.collectionName,
+    required this.fromSnapshot,
   });
 
   //Get list of model Type from Firestore.
   @override
   Stream<List<Type>> getData() {
-    var collection = Firestore.instance.collection(collectionName);
+    var collection = FirebaseFirestore.instance.collection(collectionName);
 
     return collection.snapshots().map((snapshot) {
-      return snapshot.documents.map((doc) => fromSnapshot(doc)).toList();
+      return snapshot.docs.map((doc) => fromSnapshot(doc)).toList();
     });
   }
 }
