@@ -13,14 +13,14 @@ class FireblocUtilities {
     BuildContext context,
     FireblocState state, {
     required Widget Function(BuildContext context) starting,
-    required Widget Function(List data) success,
+    required Widget Function(List<Type> data) success,
     required Widget Function() loading,
     required Widget Function() error,
     Widget? defaultWidget,
   }) {
     if (state is Starting) {
       return starting(context);
-    } else if (state is Success) {
+    } else if (state is Success<Type>) {
       return success(state.data);
     } else if (state is Loading) {
       return loading();
