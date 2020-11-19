@@ -34,7 +34,7 @@ flutter pub get
 ```
 
 ## Documentation
-#### Example of BaseRepository
+### Example of BaseRepository
 This example shows how to use BaseRepository to retrieve data from a collection by creating only the data model.
 
 **Data model** (`disocverLabel.dart`):
@@ -112,7 +112,7 @@ BlocProvider<Firebloc>(
 )
 ```
 
-#### Example with a custom repository
+### Example with a custom repository
 When the query to be executed is more complex, a customized repository and data model can be created. \
 The classes that represent repositories must extend from `FireblocRepository`
 and specify the custom type of data model you intend to use.
@@ -160,7 +160,14 @@ BlocProvider<Firebloc>(
 )
 ```
 
-#### FireblocUtilities
+### Advanced use case
+
+**Custom Bloc with custom repository**: \
+Just define the new events you want to use, the events and base states are contained in Firebloc. \
+However, it is still necessary to map all the events used in the bloc, including those contained in Firebloc, in particular UpdateData. \
+In this case it is no longer necessary for the repository to extend from `FireblocRepository`.
+
+### FireblocUtilities
 
 **stateToWidget**: \
 `FireblocUtilities.stateToWidget`
