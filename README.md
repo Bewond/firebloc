@@ -175,7 +175,7 @@ BlocProvider<Firebloc>(
     ),
   ),
   child: BlocBuilder<Firebloc, FireblocState>(
-    builder: (context, state) => FireblocUtilities.stateToWidget(
+    builder: (context, state) => FireblocUtilities.stateToWidget<DiscoverLabel>(
       context,
       state,
       starting: (context) {
