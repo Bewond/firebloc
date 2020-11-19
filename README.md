@@ -129,12 +129,12 @@ import 'package:bddelivery/models/discoverLabel.dart';
 
 
 class DiscoverRepository extends FireblocRepository {
-  final _collection = Firestore.instance.collection('mainLabels');
+  final _collection = FirebaseFirestore.instance.collection('mainLabels');
 
   @override
   Stream<List> getData() {
     return _collection.snapshots().map((snapshot) {
-      return snapshot.documents
+      return snapshot.docs
           .map((doc) => DiscoverLabel.fromSnapshot(doc))
           .toList();
     });
