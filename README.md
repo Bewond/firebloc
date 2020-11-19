@@ -9,12 +9,14 @@ A small library for [Flutter](https://flutter.dev/) to simplify the use of [bloc
 (Currently in beta)
 
 
-- [Firebloc](#firebloc)
-  * [Overview](#overview)
-    + [Example of BaseRepository](#example-of-baserepository)
-    + [Example with a custom repository](#example-with-a-custom-repository)
-    + [FireblocUtilities](#fireblocutilities)
-  * [Maintainers](#maintainers)
+- [Overview](#overview)
+- [Installing](#installing)
+- [Documentation](#documentation)
+  * [Example of BaseRepository](#example-of-baserepository)
+  * [Example with a custom repository](#example-with-a-custom-repository)
+  * [Advanced use case](#advanced-use-case)
+  * [FireblocUtilities](#fireblocutilities)
+- [Maintainers](#maintainers)
 
 
 ## Installing
