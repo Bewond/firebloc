@@ -165,6 +165,7 @@ BlocProvider<Firebloc>(
 **stateToWidget**: \
 `FireblocUtilities.stateToWidget`
 A function to simplify the writing of the code when you need to return a different Widget depending on the FireblocState.
+You must also specify the data type, in this case `DiscoverLabel`, to make the type explicit in the `success` function.
 
 ```dart
 BlocProvider<Firebloc>(
