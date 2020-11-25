@@ -176,7 +176,7 @@ Firebloc provides some tools to make coding more efficient and concise.
 ### Firebloc Widgets
 
 **FireblocBuilder**: \
-`FireblocBuilder` is a BlocBuilder wrapper to simplify its use with Firebloc.
+`FireblocBuilder` A BlocBuilder wrapper to simplify its use with Firebloc.
 If a function for a specific state is not defined, it returns optional parameter `defaultWidget`.
 
 ```dart
