@@ -169,7 +169,31 @@ Just define the new events you want to use, the events and base states are conta
 However, it is still necessary to map all the events used in the bloc, including those contained in Firebloc, in particular UpdateData. \
 In this case it is no longer necessary for the repository to extend from `FireblocRepository`.
 
-### FireblocUtilities
+## Useful widgets and functions
+Firebloc provides some tools to make coding more efficient and concise.
+
+### Firebloc Widgets
+
+**FireblocBuilder**: \
+`FireblocBuilder` is a BlocBuilder wrapper to simplify its use with Firebloc.
+If a function for a specific state is not defined, it returns optional parameter `defaultWidget`.
+
+```dart
+FireblocBuilder<DiscoverLabel>(
+  starting: (context) {
+    BlocProvider.of<Firebloc>(context).add(FetchData());
+    return Container();
+  },
+  success: (List<DiscoverLabel> data) {
+    if (data.isNotEmpty)
+      return Text('Success: ${data.length}');
+    else
+      return Text('Page not found');
+  },
+)
+```
+
+### Firebloc Utilities
 
 **stateToWidget**: \
 `FireblocUtilities.stateToWidget`
