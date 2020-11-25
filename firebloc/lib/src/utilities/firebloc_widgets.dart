@@ -5,7 +5,7 @@ import 'package:firebloc/firebloc.dart';
 
 /*
 * FireblocBuilder is a BlocBuilder wrapper to simplify its use with Firebloc.
-* If a function is not defined returns defaultWidget.
+* (If a function is not defined returns defaultWidget).
 * */
 
 class FireblocBuilder<Type> extends StatelessWidget {
@@ -32,17 +32,15 @@ class FireblocBuilder<Type> extends StatelessWidget {
     return BlocBuilder<Firebloc, FireblocState>(
       cubit: cubit,
       builder: (context, state) {
-        if (state is Starting) {
-          return starting?.call(context) ?? _defaultFunction();
-        } else if (state is Success<Type>) {
-          return success?.call(state.data) ?? _defaultFunction();
-        } else if (state is Loading) {
-          return loading?.call() ?? _defaultFunction();
-        } else if (state is Error) {
-          return error?.call() ?? _defaultFunction();
-        } else {
-          return defaultWidget ?? Container();
-        }
+        return FireblocUtilities.stateToWidget<Type>(
+          context: context,
+          state: state,
+          starting: (context) => starting?.call(context) ?? _defaultFunction(),
+          success: (data) => success?.call(data) ?? _defaultFunction(),
+          loading: () => loading?.call() ?? _defaultFunction(),
+          error: () => error?.call() ?? _defaultFunction(),
+          defaultWidget: defaultWidget,
+        );
       },
     );
   }

@@ -9,9 +9,9 @@ class FireblocUtilities {
   * A function to simplify the writing of the code
   * when you need to return a different Widget depending on the FireblocState.
   * */
-  static Widget stateToWidget<Type>(
-    BuildContext context,
-    FireblocState state, {
+  static Widget stateToWidget<Type>({
+    required BuildContext context,
+    required FireblocState state,
     required Widget Function(BuildContext context) starting,
     required Widget Function(List<Type> data) success,
     required Widget Function() loading,
