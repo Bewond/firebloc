@@ -5,7 +5,7 @@ import 'package:firebloc/firebloc.dart';
 
 /*
 * FireblocBuilder is a BlocBuilder wrapper to simplify its use with Firebloc.
-* (If a function is not defined returns defaultWidget).
+* If a function for a specific state is not defined, it returns optional parameter defaultWidget.
 * */
 
 class FireblocBuilder<Type> extends StatelessWidget {
