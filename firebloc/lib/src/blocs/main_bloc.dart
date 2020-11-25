@@ -13,7 +13,7 @@ import 'package:firebloc/src/repositories/main_repository.dart';
 * */
 
 class Firebloc<Type> extends Bloc<FireblocEvent, FireblocState> {
-  FireblocRepository<Type> _repository;
+  final FireblocRepository<Type> _repository;
   StreamSubscription? _subscription;
 
   Firebloc({required repository})
@@ -31,7 +31,7 @@ class Firebloc<Type> extends Bloc<FireblocEvent, FireblocState> {
   }
 
   Stream<FireblocState> _mapFetchDataToState() async* {
-    _subscription?.cancel();
+    await _subscription?.cancel();
     _subscription = _repository
         .getData()
         .listen((result) => add(UpdateData<Type>(data: result)));

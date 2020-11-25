@@ -21,7 +21,7 @@
     },
     {
       "name": "cloud_firestore",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.14.3",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore-0.14.3+1",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -33,7 +33,7 @@
     },
     {
       "name": "cloud_firestore_web",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-0.2.1",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/cloud_firestore_web-0.2.1+1",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -51,19 +51,19 @@
     },
     {
       "name": "firebase_core",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.5.2",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.5.2+1",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
     {
       "name": "firebase_core_platform_interface",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-2.0.0",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_platform_interface-2.1.0",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
     {
       "name": "firebase_core_web",
-      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.2.1",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core_web-0.2.1+1",
       "packageUri": "lib/",
       "languageVersion": "2.1"
     },
@@ -120,6 +120,12 @@
       "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.7.0",
       "packageUri": "lib/",
       "languageVersion": "2.0"
+    },
+    {
+      "name": "pedantic",
+      "rootUri": "file:///D:/Src/flutter/.pub-cache/hosted/pub.dartlang.org/pedantic-1.9.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
     },
     {
       "name": "plugin_platform_interface",
@@ -188,7 +194,7 @@
       "languageVersion": "2.12"
     }
   ],
-  "generated": "2020-11-19T18:25:19.812812Z",
+  "generated": "2020-11-25T17:45:59.517838Z",
   "generator": "pub",
   "generatorVersion": "2.12.0-29.10.beta"
 }
