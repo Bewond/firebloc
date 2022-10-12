@@ -1,28 +1,32 @@
-<p align="center">
-<img src="/docs/assets/firebloc.png" width="100%" alt="Firebloc" />
-</p>
+<h1 align="center">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="/docs/assets/firebloc_dark.png">
+    <img alt="Firebloc" src="/docs/assets/firebloc.png">
+  </picture>
+</h1>
 
 ## Overview
-A small library for [Flutter](https://flutter.dev/) to simplify the use of [bloc](https://bloclibrary.dev/) to manage the states of simple queries to [Firebase](https://firebase.google.com/docs/firestore).
 
+A small library for [Flutter](https://flutter.dev/) to simplify the use of [bloc](https://bloclibrary.dev/) to manage the states of simple queries to [Firebase](https://firebase.google.com/docs/firestore).
 
 (Currently in beta)
 
-
 - [Installing](#installing)
 - [Documentation](#documentation)
-  * [Example of BaseRepository](#example-of-baserepository)
-  * [Example with a custom repository](#example-with-a-custom-repository)
-  * [Advanced use case](#advanced-use-case)
+  - [Example of BaseRepository](#example-of-baserepository)
+  - [Example with a custom repository](#example-with-a-custom-repository)
+  - [Advanced use case](#advanced-use-case)
 - [Useful widgets and functions](#useful-widgets-and-functions)
-  * [Firebloc Widgets](#firebloc-widgets)
-  * [Firebloc Utilities](#firebloc-utilities)
+  - [Firebloc Widgets](#firebloc-widgets)
+  - [Firebloc Utilities](#firebloc-utilities)
 - [Maintainers](#maintainers)
 
-
 ## Installing
+
 #### Depend
+
 Add this to your package's pubspec.yaml file:
+
 ```yaml
 dependencies:
   firebloc:
@@ -30,17 +34,23 @@ dependencies:
       url: git://github.com/bewond/firebloc.git
       path: firebloc
 ```
+
 #### Install
+
 You can install packages from the command line:
+
 ```shell
 flutter pub get
 ```
 
 ## Documentation
+
 ### Example of BaseRepository
+
 This example shows how to use BaseRepository to retrieve data from a collection by creating only the data model.
 
 **Data model** (`disocverLabel.dart`):
+
 ```dart
 import 'package:meta/meta.dart';
 
@@ -80,6 +90,7 @@ Classes representing data models must extend from `FireblocData`.
 We recommend implementing a static method `fromSnapshot` within the model.
 
 **Using the bloc**:
+
 ```dart
 BlocProvider<Firebloc>(
   create: (context) => Firebloc<DiscoverLabel>(
@@ -99,14 +110,14 @@ BlocProvider<Firebloc>(
         DiscoverLabel firstLabel = state.data[0];
         print(firstLabel.text);
         print(firstLabel.description);
-        
+
         return Text('Success');
       }
-      
+
       //Loading indicator.
       else if (state is Loading)
         return CircularProgressIndicator();
-        
+
       //Error message.
       else
         return Text('Error');
@@ -116,6 +127,7 @@ BlocProvider<Firebloc>(
 ```
 
 ### Example with a custom repository
+
 When the query to be executed is more complex, a customized repository and data model can be created. \
 The classes that represent repositories must extend from `FireblocRepository`
 and specify the custom type of data model you intend to use.
@@ -171,6 +183,7 @@ However, it is still necessary to map all the events used in the bloc, including
 In this case it is no longer necessary for the repository to extend from `FireblocRepository`.
 
 ## Useful widgets and functions
+
 Firebloc provides some tools to make coding more efficient and concise.
 
 ### Firebloc Widgets
@@ -230,9 +243,11 @@ BlocProvider<Firebloc>(
   ),
 )
 ```
+
 If necessary, you can specify a default Widget using the optional `defaultWidget` parameter.
 
 ---
 
 ## Maintainers
+
 - [Riccardo Brero](https://github.com/Riki1312)
